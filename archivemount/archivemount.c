@@ -1517,7 +1517,7 @@ _ar_getattr( const char *path, struct stat *stbuf )
 	stbuf->st_blocks  = (stbuf->st_size + 511) / 512;
 	stbuf->st_blksize = 4096;
 
-	if( options.readonly ) {
+	if( options.readonly && ! options.nosave ) {
 		stbuf->st_mode = stbuf->st_mode & 0777555;
 	}
 
