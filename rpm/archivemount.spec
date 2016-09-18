@@ -1,7 +1,7 @@
 Name:       archivemount
 
 Summary:    Mounts an archive for access as a file system
-Version:    0.8.7
+Version:    0.8.7+git1.1
 Release:    1
 Group:      Applications/System
 License:    LGPL2
