@@ -4,8 +4,8 @@ Summary:    Mounts an archive for access as a file system
 Version:    0.8.7
 Release:    1
 Group:      Applications/System
-License:    LGPL2
-URL:        http://www.cybernoia.de/software/archivemount/
+License:    LGPLv2
+URL:        https://www.cybernoia.de/software/archivemount.html
 Source0:    %{name}-%{version}.tar.bz2
 BuildRequires:  pkgconfig(libarchive)
 BuildRequires:  pkgconfig(fuse)
