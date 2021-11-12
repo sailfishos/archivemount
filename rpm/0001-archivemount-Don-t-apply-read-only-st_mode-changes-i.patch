@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Pekka Vuorela <pekka.vuorela@jolla.com>
+Date: Fri, 12 Nov 2021 15:31:43 +0200
+Subject: [PATCH] [archivemount] Don't apply read-only st_mode changes if
+ archive will not be saved. Contributes to JB#36279
+
+Settings readonly=true changes the file permission changes for the
+files read from the archive. If the archive will not be saved, the
+permission changes are unnecessary.
+---
+ archivemount.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/archivemount.c b/archivemount.c
+index 549407d..3cbe71d 100644
+--- a/archivemount.c
++++ b/archivemount.c
+@@ -1588,7 +1588,7 @@ _ar_getattr(const char *path, struct stat *stbuf)
+ 		}
+ 	}
+ 
+-	if (options.readonly) {
++	if (options.readonly && ! options.nosave) {
+ 		stbuf->st_mode = stbuf->st_mode & 0777555;
+ 	}
+ 
+-- 
+2.31.1
+

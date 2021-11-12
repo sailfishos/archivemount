@@ -10,6 +10,7 @@ BuildRequires:  pkgconfig(libarchive)
 BuildRequires:  pkgconfig(fuse)
 BuildRequires:  automake
 BuildRequires:  autoconf
+Patch1: 0001-archivemount-Don-t-apply-read-only-st_mode-changes-i.patch
 
 %description
 %{summary}.
@@ -21,7 +22,7 @@ Requires: %{name} = %{version}-%{release}
 %summary
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%autosetup -p1 -n %{name}-%{version}/%{name}
 
 %build
 autoreconf --force --install
