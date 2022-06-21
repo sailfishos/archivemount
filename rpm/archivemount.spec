@@ -4,7 +4,7 @@ Summary:    Mounts an archive for access as a file system
 Version:    0.9.1
 Release:    1
 License:    LGPLv2
-URL:        https://www.cybernoia.de/software/archivemount.html
+URL:        https://github.com/sailfishos/archivemount
 Source0:    %{name}-%{version}.tar.bz2
 BuildRequires:  pkgconfig(libarchive)
 BuildRequires:  pkgconfig(fuse)
